@@ -12,11 +12,11 @@ from modules.tools import WebSearchTool
 load_dotenv()
 
 # 프로젝트 이름
-logging.langsmith("Perplexity")
+logging.langsmith("MediLLM")
 
-st.title("Perplexity 💬")
+st.title("MediLLM 👨‍⚕️👩‍⚕️")
 st.markdown(
-    "LLM에 **웹검색 기능** 을 추가한 [Perplexity](https://www.perplexity.ai/) 클론 입니다. _멀티턴_ 대화를 지원합니다."
+    "의료 특화 LLM에 **웹검색 기능** 을 추가한 [Perplexity](https://www.perplexity.ai/) 클론 입니다. _멀티턴_ 대화를 지원합니다."
 )
 
 # 대화기록을 저장하기 위한 용도로 생성
