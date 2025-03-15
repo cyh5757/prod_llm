@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "fastcampus-perplexity-clone"
+name = "prod_llm"
 version = "0.1.0"
 description = ""
-authors = ["teddy <teddylee777@gmail.com>"]
+authors = ["teddy <teddylee777@gmail.com> (원본)", "meto <cyh8781@gmail.com> (수정)"]
+
 license = "Apache 2.0"
 readme = "README.md"
 package-mode = false
