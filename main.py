@@ -36,7 +36,7 @@ with st.sidebar:
     # 초기화 버튼 생성
     clear_btn = st.button("대화 초기화")
 
-    st.markdown("made by [@teddynote](https://youtube.com/c/teddynote)")
+    st.markdown("made by 영환")
 
     # 모델 선택 메뉴
     selected_model = st.selectbox("LLM 선택", ["gpt-4o", "gpt-4o-mini"], index=0)
