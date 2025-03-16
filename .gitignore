@@ -177,6 +177,4 @@ cython_debug/
 modal_ollama.py
 modal_require_down.py
 modal_app.py
-ollama.service
-ollama_prac.py
 snuh-manual-of-medicine6.pdf
