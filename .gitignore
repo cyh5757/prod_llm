@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+modal_ollama.py
+modal_require_down.py
+modal_app.py
+ollama.service
+ollama_prac.py
