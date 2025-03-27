@@ -10,12 +10,14 @@ from pinecone import Pinecone, ServerlessSpec
 from tqdm import tqdm
 import concurrent.futures
 from typing import List, Dict, Any
-
+# LangSmith 추적 설정
+from langchain_teddynote import logging
+logging.langsmith("3_embed_to_pinecone")
 # 1. 환경변수 로드
 load_dotenv()
 
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "doctor")
+PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "medical-db")
 PINECONE_REGION = os.getenv("PINECONE_REGION", "us-east-1")
 NAMESPACE = "drug-rag-namespace"
 
