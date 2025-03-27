@@ -1,5 +1,5 @@
 # 3_embed_to_pinecone.py (rag_drug_agent용)
-# 목적: drug_chunks.csv를 기반으로 Pinecone에 벡터 업로드
+# 목적: drug_chunks.csv를 기반으로 Pinecone에 벡터 업로드 (최초 1회 인덱스 삭제)
 
 import os
 import pandas as pd
@@ -13,6 +13,7 @@ from typing import List, Dict, Any
 # LangSmith 추적 설정
 from langchain_teddynote import logging
 logging.langsmith("3_embed_to_pinecone")
+
 # 1. 환경변수 로드
 load_dotenv()
 
@@ -28,15 +29,22 @@ def load_documents(filepath="data/drug_chunks.csv"):
     documents = [
         Document(
             page_content=row["chunk"],
-            metadata={"itemName": row["itemName"]}
+            metadata={
+                "itemName": row["itemName"],
+                "text": row["chunk"]
+            }
         )
         for _, row in df.iterrows()
     ]
     return documents
 
-# 3. Pinecone 인덱스 생성 또는 연결
-def get_or_create_index():
+# 3. Pinecone 인덱스 생성 또는 연결 (최초 1회 삭제)
+def get_index(delete_first=False):
     pc = Pinecone(api_key=PINECONE_API_KEY)
+
+    if delete_first and PINECONE_INDEX_NAME in pc.list_indexes().names():
+        print(f"🗑️ 기존 인덱스 삭제: {PINECONE_INDEX_NAME}")
+        pc.delete_index(PINECONE_INDEX_NAME)
 
     if PINECONE_INDEX_NAME not in pc.list_indexes().names():
         pc.create_index(
@@ -72,8 +80,8 @@ if __name__ == "__main__":
         print("📄 문서 로드 중...")
         documents = load_documents()
 
-        print("📌 Pinecone 인덱스 준비 중...")
-        index = get_or_create_index()
+        print("📌 Pinecone 인덱스 삭제 후 생성 중 (최초 1회)...")
+        index = get_index(delete_first=False)  # <- 여기만 True로 변경
 
         print("🔗 임베딩 모델 준비 중...")
         embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
