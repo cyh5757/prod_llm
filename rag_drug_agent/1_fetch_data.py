@@ -1,5 +1,3 @@
-# 1_fetch_data.py (최종 안정 버전: XML 기반)
-
 import requests
 import time
 import pandas as pd

@@ -1,6 +1,3 @@
-# 4_query_rag_pinecone.py
-# 목적: 사용자의 질문에 대해 Pinecone에서 유사 문서 검색 후 LLM 응답 생성
-
 import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
@@ -10,6 +7,7 @@ from langchain_core.runnables import RunnableMap
 from pinecone import Pinecone, ServerlessSpec
 from langchain_core.output_parsers import StrOutputParser
 from langchain_teddynote import logging
+# 목적: 사용자의 질문에 대해 Pinecone에서 유사 문서 검색 후 LLM 응답 생성
 
 # LangSmith 추적 설정
 logging.langsmith("4_query_rag_pinecone")

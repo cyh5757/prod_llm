@@ -1,6 +1,3 @@
-# 3_embed_to_pinecone.py (rag_drug_agent용)
-# 목적: drug_chunks.csv를 기반으로 Pinecone에 벡터 업로드 (최초 1회 인덱스 삭제)
-
 import os
 import pandas as pd
 from dotenv import load_dotenv

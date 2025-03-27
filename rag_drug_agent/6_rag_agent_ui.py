@@ -1,6 +1,3 @@
-# rag_agent_ui.py
-# 목적: 약품 정보를 검색하는 RAG 기반 Agent + Gradio UI + 기록 저장 기능 (Step 6)
-
 import os
 import gradio as gr
 import csv
@@ -12,7 +9,7 @@ from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain.schema import Document
 from langchain_teddynote import logging
-
+# 목적: 약품 정보를 검색하는 RAG 기반 Agent + Gradio UI + 기록 저장 기능 (Step 6)
 # 1. 환경변수 로드 및 LangSmith 추적 설정
 load_dotenv()
 logging.langsmith("6_rag_agent_ui")

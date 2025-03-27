@@ -1,5 +1,3 @@
-# 2_preprocess_chunk.py (약품 정보 전처리 및 Chunk 생성)
-
 import pandas as pd
 import os
 

@@ -1,6 +1,3 @@
-# 4_rag_agent.py
-# 목적: RAG 기반 약품 정보 검색 에이전트
-
 import os
 import gradio as gr
 from dotenv import load_dotenv
@@ -13,6 +10,7 @@ from langchain.callbacks import LangChainTracer
 from langchain.schema import Document
 from typing import List
 import pandas as pd
+# 목적: RAG 기반 약품 정보 검색 에이전트
 
 # 1. 환경변수 로드
 load_dotenv()
