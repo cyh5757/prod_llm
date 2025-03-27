@@ -37,7 +37,6 @@ image = (
     .pip_install("ollama")
     .run_function(pull)  # Ollama 서버 실행 및 모델 다운로드
      # ✅ 마지막에 실행
-
 )
 
 app = modal.App(name="ollama", image=image)
