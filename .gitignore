@@ -173,6 +173,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+# csv file
+*.csv
 
 modal_ollama.py
 modal_require_down.py
