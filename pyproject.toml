@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "prod_llm"
+name = "langchain-kr"
 version = "0.1.1"
 description = "Ultimate LangChain Tutorial written in Korean by TeddyNote."
-authors = ["teddy <teddylee777@gmail.com> (원본)", "meto <cyh8781@gmail.com> (수정)"]
+authors = ["teddy <teddylee777@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 package-mode = false
@@ -68,7 +68,7 @@ pydantic = "^2.7.4"
 lxml = "^5.2.2"
 pillow = "^10.3.0"
 lark = "^1.1.9"
-ragas = "^0.1.7"
+ragas = "^0.2.14"
 unstructured = {version = "0.10.19", extras = ["all-docs"]}
 arxiv = "^2.1.0"
 tiktoken = "^0.7"
@@ -92,7 +92,6 @@ mypy = "^1.11.2"
 pinecone = "^5.3.1"
 wikipedia = "^1.4.0"
 scikit-learn = "^1.5.2"
-jq = "^1.8.0"
 
 [build-system]
 requires = ["poetry-core"]

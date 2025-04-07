@@ -175,6 +175,7 @@ cython_debug/
 
 # csv file
 *.csv
+*.json
 
 modal_ollama.py
 modal_require_down.py
